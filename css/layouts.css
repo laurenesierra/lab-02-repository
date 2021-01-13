@@ -1,46 +1,90 @@
+body{
+  width: 100vw;
+  height: 100vh;
+}
+h1{ 
+font-family: 'Courier New', Courier, monospace;
+margin-top: 10px;
+font-size: 40px;
+text-align: center;
+}
+h2{
+  text-align: center;
+}
+#options{
+width: 200px;
+margin-top: 10px;
+margin-bottom: 10px;
+margin-left: 45%;
+}
 img{ 
   width: 200px;
-  
+  border: 2mm ridge palegoldenrod;
+  margin-left: 30%;
   }
 p{
+white-space: space nowrap;;
 font-family: 'Courier New', Courier, monospace;
+display: block;
+margin-left: 23.5%;
+border: 2px solid black;
+width: 50%;
+text-align: center;
+
 }
-/* 
+section{
+float: left;
+width: 33.33%;
+padding: 35px;
+
+}
+section::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#photo-template{
+  display: none;
+ 
+}
+/* #mouflon > img{
+  height: 200px;
+}
+ 
 #narwhal{
- border: 2mm ridge green;
+border: 2mm ridge black;
 
 }
 #rhino{
-  border: 2mm ridge rgb(212, 135, 222);
+  border: 2mm ridge black;
 }
 #unicorn{
-border: 4px solid rgb(0, 0, 0);
+border: 2mm ridge black;
 }
 #unilego{
-  border: 4px solid rgb(22, 9, 197);
+  border: 2mm ridge black;
 }
 #triceratops{
-  border: 4px solid rgb(186, 18, 192);
+  border: 2mm ridge black;
 }
 #markhor{
-  border: 4 solid rgb(230, 76, 30);
+  border: 2mm ridge black;
 }
 #mouflon{
-  border: 4 solid rgb(23, 187, 187);
+  border: 2mm ridge black;
 }
-section#addax{
-  border: 4 solid rgb(16, 89, 172);
+#addax{
+  border: 2mm ridge black;
 }
 #chameleon{
-  border: 4 solid rgb(184, 30, 120);
+  border: 2mm ridge black;
 }
 #lizard{
-  border: 4 solid rgb(175, 115, 37);
+  border: 2mm ridge black;
 }
 #dragon{
-  border: 4 solid rgb(37, 173, 25);
+  border: 2mm ridge black;
 } */
 
-section{
-  display: flex;
-}
+

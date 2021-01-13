@@ -12,7 +12,8 @@ function PopulateImage(title, url, description, horns, keyword) {
   this.horns = horns;
   this.keyword = keyword;
 }
-PopulateImage.prototype.render = function () {
+PopulateImage.prototype.render = function(){
+
   const $imgClone = $('#photo-template').clone();
   const $img = $imgClone.find('img');
   $imgClone.find('h2').text(this.title);
@@ -23,6 +24,16 @@ PopulateImage.prototype.render = function () {
   $imgClone.find('p').text(this.description);
   $('main').append($imgClone);
 };
+PopulateImage.prototype.dropMenu = function (){
+
+  const $dropMenuClone = $('option').clone();
+  $dropMenuClone.attr('value', this.keyword);
+  $dropMenuClone.text(this.keyword);
+  $('select').append($dropMenuClone);
+  // while value is being displayed only show one of each keyword
+  
+};
+
 
 $.ajax('data/page-1.json').then(pickImage => {
   console.log(pickImage);
@@ -33,7 +44,7 @@ $.ajax('data/page-1.json').then(pickImage => {
   });
   unicorn.forEach(animal => {
     animal.render();
-
+    animal.dropMenu();
   });
 
 });
