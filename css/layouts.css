@@ -1,0 +1,46 @@
+img{ 
+  width: 200px;
+  
+  }
+p{
+font-family: 'Courier New', Courier, monospace;
+}
+/* 
+#narwhal{
+ border: 2mm ridge green;
+
+}
+#rhino{
+  border: 2mm ridge rgb(212, 135, 222);
+}
+#unicorn{
+border: 4px solid rgb(0, 0, 0);
+}
+#unilego{
+  border: 4px solid rgb(22, 9, 197);
+}
+#triceratops{
+  border: 4px solid rgb(186, 18, 192);
+}
+#markhor{
+  border: 4 solid rgb(230, 76, 30);
+}
+#mouflon{
+  border: 4 solid rgb(23, 187, 187);
+}
+section#addax{
+  border: 4 solid rgb(16, 89, 172);
+}
+#chameleon{
+  border: 4 solid rgb(184, 30, 120);
+}
+#lizard{
+  border: 4 solid rgb(175, 115, 37);
+}
+#dragon{
+  border: 4 solid rgb(37, 173, 25);
+} */
+
+section{
+  display: flex;
+}
