@@ -46,11 +46,12 @@ $.ajax('data/page-1.json').then(pickImage => {
       $('select').append($dropMenuClone);
     }
   });
+  $(document).ready(function () {
+    $('#options').on('change', function () {
+      let str = "";
+      $('option').hide();
+      str += $( this ).text() + " ";
+    });
 
+  });
 });
-
-
-
-
-
-
