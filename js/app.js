@@ -12,40 +12,45 @@ function PopulateImage(title, url, description, horns, keyword) {
   this.horns = horns;
   this.keyword = keyword;
 }
-PopulateImage.prototype.render = function(){
-
+PopulateImage.prototype.render = function () {
   const $imgClone = $('#photo-template').clone();
   const $img = $imgClone.find('img');
   $imgClone.find('h2').text(this.title);
   $imgClone.attr('id', this.keyword);
   $img.attr('src', this.image_url);
   $img.attr('alt', this.description);
-
   $imgClone.find('p').text(this.description);
   $('main').append($imgClone);
 };
-PopulateImage.prototype.dropMenu = function (){
-
-  const $dropMenuClone = $('option').clone();
-  $dropMenuClone.attr('value', this.keyword);
-  $dropMenuClone.text(this.keyword);
-  $('select').append($dropMenuClone);
-  // while value is being displayed only show one of each keyword
-  
-};
-
-
+// PopulateImage.prototype.dropMenu = function () {
+//   const $dropMenuClone = $(`<option value=${this.keyword}>${this.keyword}</option>`);
+//   $('select').append($dropMenuClone);
+//   // $dropMenuClone.attr('value', this.keyword);
+//   // $dropMenuClone.text(this.keyword);
+//   // while value is being displayed only show one of each keyword
+// };
 $.ajax('data/page-1.json').then(pickImage => {
   console.log(pickImage);
-
+  const animalArray = [];
   pickImage.forEach(element => {
     unicorn.push(new PopulateImage(element.title, element.image_url, element.description, element.horns, element.keyword));
-
   });
   unicorn.forEach(animal => {
     animal.render();
-    animal.dropMenu();
+    // animal.dropMenu();
+  });
+  unicorn.forEach(animal => {
+    if (!animalArray.includes(animal.keyword)) {
+      animalArray.push(animal.keyword);
+      const $dropMenuClone = $(`<option value=${animal.keyword}>${animal.keyword}</option>`);
+      $('select').append($dropMenuClone);
+    }
   });
 
 });
+
+
+
+
+
 
