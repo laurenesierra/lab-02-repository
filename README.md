@@ -8,6 +8,9 @@ https://api.jquery.com/jquery.ajax/
 
 Michael Ruessell
 Lauren Sierra
+Glenn Clark
+Bade Habib
+Ron Dunphy
 
 ### support
 

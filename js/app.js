@@ -29,6 +29,16 @@ PopulateImage.prototype.render = function () {
 //   // $dropMenuClone.text(this.keyword);
 //   // while value is being displayed only show one of each keyword
 // };
+
+const photoTemplate = $('#photo-template').html();
+const $animalRender = $(`<section>${photoTemplate}</section>`);
+$animalRender.addClass(`${this.keyword}`);
+const $h2 = $animalRender.find('h2');
+
+$h2.text(this.title);
+
+
+
 $.ajax('data/page-1.json').then(pickImage => {
   console.log(pickImage);
   const animalArray = [];
@@ -46,12 +56,28 @@ $.ajax('data/page-1.json').then(pickImage => {
       $('select').append($dropMenuClone);
     }
   });
-  $(document).ready(function () {
-    $('#options').on('change', function () {
-      let str = "";
-      $('option').hide();
-      str += $( this ).text() + " ";
+
+});
+
+const handleImage = () => {
+  $('select').on('change', function () {
+    $('section').hide();
+    let $userValue = $(this).val();
+    // console.log($userValue);
+
+    unicorn.forEach(image => {
+      if ($userValue === image.keyword) {
+        // console.log('Found match');
+
+        $(`section[class = ${$userValue}]`).show();
+        //dynamically assign a class to section.
+      }
     });
 
   });
+
+};
+
+$(() => {
+  handleImage();
 });
