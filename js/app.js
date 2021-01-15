@@ -61,15 +61,17 @@ $.ajax('data/page-1.json').then(pickImage => {
 
 const handleImage = () => {
   $('select').on('change', function () {
-    $('section').hide();
     let $userValue = $(this).val();
+    $(`section[class = ${$userValue}]`).show();
+    $('section').hide();
+
     // console.log($userValue);
 
     unicorn.forEach(image => {
       if ($userValue === image.keyword) {
         // console.log('Found match');
 
-        $(`section[class = ${$userValue}]`).show();
+
         //dynamically assign a class to section.
       }
     });

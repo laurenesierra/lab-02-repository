@@ -9,12 +9,16 @@ https://api.jquery.com/jquery.ajax/
 Michael Ruessell
 Lauren Sierra
 Glenn Clark
-Bade Habib
-Ron Dunphy
 
 ### support
 
 nicco ryan
+paul o'brien
+Bade Habib
+Ron Dunphy
+
+
+
 
 jquery selectors and events
 

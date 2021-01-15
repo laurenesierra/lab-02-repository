@@ -1,9 +1,65 @@
 body{
-  width: 100vw;
-  height: 100vh;
+ margin: auto;
+ height: 767px;
+  width: 480px;
+
+  
 }
-h1{ 
-font-family: 'Courier New', Courier, monospace;
+
+main{
+
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex;
+  flex-direction: row;
+  border: 2mm ridge green;
+ 
+}
+img{ 
+  width: 100%;
+  
+  }
+  section{
+    text-align: center;
+    padding: 5px;
+    margin: 55px;
+    height: 250px;
+    width: 200px;
+   }
+
+   @media (min-width:768px){
+    body{
+      margin: auto;
+      width: 768px;
+     
+       
+     }
+  
+     main{
+     
+       margin: auto;
+       display: flex;
+       flex-wrap: wrap;
+       align-items: flex;
+       flex-direction: row;
+       border: 2mm ridge green;
+      
+     }
+     img{ 
+       width: 100%;
+       
+       }
+       section{
+         text-align: center;
+         padding: 5px;
+         margin: 55px;
+         height: 250px;
+         width: 200px;
+        }
+     
+   }
+/* h1{ 
 margin-top: 10px;
 font-size: 40px;
 text-align: center;
@@ -17,14 +73,9 @@ margin-top: 10px;
 margin-bottom: 10px;
 margin-left: 45%;
 }
-img{ 
-  width: 200px;
-  border: 2mm ridge palegoldenrod;
-  margin-left: 30%;
-  }
+
 p{
 white-space: space nowrap;;
-font-family: 'Courier New', Courier, monospace;
 display: block;
 margin-left: 23.5%;
 border: 2px solid black;
@@ -46,45 +97,4 @@ section::after{
 
 #photo-template{
   display: none;
- 
-}
-/* #mouflon > img{
-  height: 200px;
-}
- 
-#narwhal{
-border: 2mm ridge black;
-
-}
-#rhino{
-  border: 2mm ridge black;
-}
-#unicorn{
-border: 2mm ridge black;
-}
-#unilego{
-  border: 2mm ridge black;
-}
-#triceratops{
-  border: 2mm ridge black;
-}
-#markhor{
-  border: 2mm ridge black;
-}
-#mouflon{
-  border: 2mm ridge black;
-}
-#addax{
-  border: 2mm ridge black;
-}
-#chameleon{
-  border: 2mm ridge black;
-}
-#lizard{
-  border: 2mm ridge black;
-}
-#dragon{
-  border: 2mm ridge black;
 } */
-
-
