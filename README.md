@@ -12,13 +12,13 @@ Glenn Clark
 Bade Habib
 Ron Dunphy
 
-### support
+### Support
 
-nicco ryan
+Nicco Ryan
 
 jquery selectors and events
 
-Number and name of feature: #1 Display images
+## Number and name of feature: #1 Display images
 
 Estimate of time needed to complete: 40
 
@@ -29,7 +29,7 @@ Finish time: 7:10
 Actual time needed to complete: 4 hours
 
 
-Number and name of feature: ________________________________
+## Number and name of feature: ________________________________
 
 Estimate of time needed to complete: _____
 
@@ -40,7 +40,7 @@ Finish time: _____
 Actual time needed to complete: _____
 
 
-Number and name of feature: number 3 style the application
+## Number and name of feature: number 3 style the application
 
 Estimate of time needed to complete: 40
 

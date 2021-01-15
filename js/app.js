@@ -22,13 +22,13 @@ PopulateImage.prototype.render = function () {
   $imgClone.find('p').text(this.description);
   $('main').append($imgClone);
 };
-// PopulateImage.prototype.dropMenu = function () {
-//   const $dropMenuClone = $(`<option value=${this.keyword}>${this.keyword}</option>`);
-//   $('select').append($dropMenuClone);
-//   // $dropMenuClone.attr('value', this.keyword);
-//   // $dropMenuClone.text(this.keyword);
-//   // while value is being displayed only show one of each keyword
-// };
+
+
+
+$('button').on('click', event => {
+
+  console.log($(event.target).text());
+});
 
 const photoTemplate = $('#photo-template').html();
 const $animalRender = $(`<section>${photoTemplate}</section>`);
@@ -61,15 +61,19 @@ $.ajax('data/page-1.json').then(pickImage => {
 
 const handleImage = () => {
   $('select').on('change', function () {
-    $('section').hide();
+    if $(`section.keyword !== #photo-template) {
+    $('section').empty();
+    // }
     let $userValue = $(this).val();
     // console.log($userValue);
 
     unicorn.forEach(image => {
       if ($userValue === image.keyword) {
-        // console.log('Found match');
+        image.render();
 
-        $(`section[class = ${$userValue}]`).show();
+        console.log('Found match' + image.keyword);
+
+        // $(`section[class = ${$userValue}]`).show();
         //dynamically assign a class to section.
       }
     });
