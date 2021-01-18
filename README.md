@@ -22,7 +22,7 @@ Ron Dunphy
 
 jquery selectors and events
 
-Number and name of feature: #1 Display images
+## Number and name of feature: #1 Display images
 
 Estimate of time needed to complete: 40
 
@@ -33,23 +33,33 @@ Finish time: 7:10
 Actual time needed to complete: 4 hours
 
 
-Number and name of feature: ________________________________
+## Number and name of feature: #1 pagination
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30
 
-Start time: _____
+Start time: 7:00
 
-Finish time: _____
+Finish time: 7:30
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30
 
 
-Number and name of feature: number 3 style the application
+## Number and name of feature: #2 templating
 
-Estimate of time needed to complete: 40
+Estimate of time needed to complete: 30
 
-Start time: 7:15
+Start time: 6:30
 
-Finish time: _____
+Finish time: 7:00
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30
+
+## Number and name of feature: #2 templating
+
+Estimate of time needed to complete: 30
+
+Start time: 7:30
+
+Finish time: 
+
+Actual time needed to complete: 
