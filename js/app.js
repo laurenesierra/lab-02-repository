@@ -1,8 +1,7 @@
 'use strict';
 
-
 PopulateImage.unicorn = [];
-
+let pagination = 'data/page-1.json';
 
 function PopulateImage(title, url, description, horns, keyword) {
   this.title = title;
@@ -11,31 +10,6 @@ function PopulateImage(title, url, description, horns, keyword) {
   this.horns = horns;
   this.keyword = keyword;
 }
-// <<<<<<< first
-// =======
-// PopulateImage.prototype.render = function () {
-//   const $imgClone = $('#photo-template').clone();
-//   const $img = $imgClone.find('img');
-//   $imgClone.find('h2').text(this.title);
-//   $imgClone.attr('id', this.keyword);
-//   $img.attr('src', this.image_url);
-//   $img.attr('alt', this.description);
-//   $imgClone.find('p').text(this.description);
-//   $('main').append($imgClone);
-// };
-// PopulateImage.prototype.dropMenu = function () {
-//   const $dropMenuClone = $(`<option value=${this.keyword}>${this.keyword}</option>`);
-//   $('select').append($dropMenuClone);
-//   // $dropMenuClone.attr('value', this.keyword);
-//   // $dropMenuClone.text(this.keyword);
-//   // while value is being displayed only show one of each keyword
-// };
-
-const photoTemplate = $('#photo-template').html();
-const $animalRender = $(`<section>${photoTemplate}</section>`);
-$animalRender.addClass(`${this.keyword}`);
-const $h2 = $animalRender.find('h2');
-
 
 PopulateImage.prototype.render = function () {
 
@@ -56,28 +30,50 @@ PopulateImage.prototype.render = function () {
   $('main').append($imageRender);
 };
 
+function ajaxFunction() {
+  $.ajax(pagination).then(pickImage => {
+    pickImage.forEach((animal) => {
+      PopulateImage.unicorn.push(new PopulateImage(animal.title, animal.image_url, animal.description, animal.horns, animal.keyword));
+    });
 
-$.ajax('data/page-1.json').then(pickImage => {
-  pickImage.forEach((animal) => {
-    PopulateImage.unicorn.push(new PopulateImage(animal.title, animal.image_url, animal.description, animal.horns, animal.keyword));
+    // console.log(animal);
+    const filterKeyword = [];
+
+    PopulateImage.unicorn.forEach((animal) => {
+      if (!filterKeyword.includes(animal.keyword)) {
+        const $dropMenu = $(`<option>${animal.keyword}</option>`);
+        $dropMenu.attr('value', animal.keyword);
+        $('select').append($dropMenu);
+        filterKeyword.push(animal.keyword);
+      }
+
+      animal.render();
+
+    });
   });
-
-  // console.log(animal);
-  const filterKeyword = [];
-
-  PopulateImage.unicorn.forEach((animal) => {
-    if (!filterKeyword.includes(animal.keyword)) {
-      const $dropMenu = $(`<option>${animal.keyword}</option>`);
-      $dropMenu.attr('value', animal.keyword);
-      $('select').append($dropMenu);
-      filterKeyword.push(animal.keyword);
+  $('.sort').on('click', (event) => {
+    event.preventDefault();
+    let sortingBy;
+    if ($(event.target).text() === 'Sort Alphabetically') {
+      sortingBy = 'title';
+    } else {
+      sortingBy = 'horns';
     }
-
-    animal.render();
-
+    PopulateImage.unicorn.sort((left, right) => {
+      $('section').remove();
+      if (left[sortingBy] < right[sortingBy]) {
+        return -1;
+      } else if (left[sortingBy] > right[sortingBy]) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    PopulateImage.unicorn.forEach(animal => animal.render());
   });
-});
+}
 
+ajaxFunction();
 PopulateImage.populateDrop = () => {
   const filterKeyword = [];
 
@@ -87,9 +83,22 @@ PopulateImage.populateDrop = () => {
 };
 
 $('select').on('change', (event) => {
+  event.preventDefault();
   $('section').hide();
   let $userValue = event.target.value;
 
   $(`section[class = ${$userValue}]`).show();
 
 });
+
+$('.change-page').on('click', (event) => {
+  event.preventDefault();
+  pagination = pagination === 'data/page-1.json' ? 'data/page-2.json' : 'data/page-1.json';
+
+  $('section').remove();
+  $('option').not(':first').remove();
+  PopulateImage.unicorn = [];
+  ajaxFunction();
+
+});
+
