@@ -1,13 +1,24 @@
 # lab-02-repository
 
-### Assests:
+### Assests
 
 https://api.jquery.com/jquery.ajax/
 
-### Collaborators:
+### Collaborators
 
-Michael Ruessel
+Michael Ruessell
 Lauren Sierra
+Glenn Clark
+
+### support
+
+nicco ryan
+paul o'brien
+Bade Habib
+Ron Dunphy
+
+
+
 
 jquery selectors and events
 
@@ -17,20 +28,9 @@ Estimate of time needed to complete: 40
 
 Start time: 2:20
 
-Finish time: _____
+Finish time: 7:10
 
-Actual time needed to complete: _____
-
-
-Number and name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
+Actual time needed to complete: 4 hours
 
 
 Number and name of feature: ________________________________
@@ -38,6 +38,17 @@ Number and name of feature: ________________________________
 Estimate of time needed to complete: _____
 
 Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+
+Number and name of feature: number 3 style the application
+
+Estimate of time needed to complete: 40
+
+Start time: 7:15
 
 Finish time: _____
 

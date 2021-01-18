@@ -1,6 +1,8 @@
 'use strict';
 
+
 PopulateImage.unicorn = [];
+
 
 function PopulateImage(title, url, description, horns, keyword) {
   this.title = title;
@@ -9,6 +11,30 @@ function PopulateImage(title, url, description, horns, keyword) {
   this.horns = horns;
   this.keyword = keyword;
 }
+// <<<<<<< first
+// =======
+// PopulateImage.prototype.render = function () {
+//   const $imgClone = $('#photo-template').clone();
+//   const $img = $imgClone.find('img');
+//   $imgClone.find('h2').text(this.title);
+//   $imgClone.attr('id', this.keyword);
+//   $img.attr('src', this.image_url);
+//   $img.attr('alt', this.description);
+//   $imgClone.find('p').text(this.description);
+//   $('main').append($imgClone);
+// };
+// PopulateImage.prototype.dropMenu = function () {
+//   const $dropMenuClone = $(`<option value=${this.keyword}>${this.keyword}</option>`);
+//   $('select').append($dropMenuClone);
+//   // $dropMenuClone.attr('value', this.keyword);
+//   // $dropMenuClone.text(this.keyword);
+//   // while value is being displayed only show one of each keyword
+// };
+
+const photoTemplate = $('#photo-template').html();
+const $animalRender = $(`<section>${photoTemplate}</section>`);
+$animalRender.addClass(`${this.keyword}`);
+const $h2 = $animalRender.find('h2');
 
 
 PopulateImage.prototype.render = function () {

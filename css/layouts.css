@@ -1,3 +1,4 @@
+
 body {
   width: 960px;
   /* overflow: hidden; */
@@ -32,7 +33,66 @@ footer {
   padding-bottom: 10px;
 }
 
-/* #photo-template {
+
+/* body{
+ margin: auto;
+ height: 767px;
+  width: 480px;
+
+  
+}
+
+main{
+
   margin: auto;
-  text-align: center;
-} */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex;
+  flex-direction: row;
+  border: 2mm ridge green;
+ 
+}
+img{ 
+  width: 100%;
+  
+  }
+  section{
+    text-align: center;
+    padding: 5px;
+    margin: 55px;
+    height: 250px;
+    width: 200px;
+   }
+
+   @media (min-width:768px){
+    body{
+      margin: auto;
+      width: 768px;
+     
+       
+     }
+  
+     main{
+     
+       margin: auto;
+       display: flex;
+       flex-wrap: wrap;
+       align-items: flex;
+       flex-direction: row;
+       border: 2mm ridge green;
+      
+     }
+     img{ 
+       width: 100%;
+       
+       }
+       section{
+         text-align: center;
+         padding: 5px;
+         margin: 55px;
+         height: 250px;
+         width: 200px;
+        }
+     
+   }
+ */
